@@ -1,0 +1,7 @@
+category: Devel
+requires: ctags gedit python python-gi girepository-Gtk3.0 girepository-Peas1.0
+sdesc: "Gedit source code symbol browser plugin"
+ldesc: "This plugin will add a new tab to the side pane in the Gedit 
+text editor which shows symbols (functions, classes, variables, etc.) 
+for the active document. Clicking a symbol in the list wil jump to the 
+line on which that symbol is defined."

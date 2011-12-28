@@ -1,0 +1,20 @@
+GIT_URI="git://github.com/Quixotix/${PN}.git"
+GIT_TAG="v${PV}"
+inherit git python
+
+src_compile() { :; }
+
+src_install() {
+	local plugindir="/usr/lib/gedit/plugins"
+	local schemadir="/usr/share/glib-2.0/schemas"
+
+	cd ${S}
+	insinto ${plugindir}
+	doins sourcecodebrowser.plugin
+	insinto ${plugindir}/sourcecodebrowser
+	cp -r sourcecodebrowser/ ${D}${plugindir}/
+	python_optimize ${plugindir}
+
+	dodir ${schemadir}
+	mv ${D}${plugindir}/sourcecodebrowser/data/*.gschema.xml ${D}${schemadir}
+}
