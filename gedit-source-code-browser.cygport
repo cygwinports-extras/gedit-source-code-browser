@@ -2,6 +2,19 @@ GIT_URI="git://github.com/Quixotix/${PN}.git"
 GIT_TAG="v${PV}"
 inherit git python
 
+NAME="gedit-source-code-browser"
+VERSION=3.0.3
+RELEASE=2
+CATEGORY="Devel"
+SUMMARY="Gedit source code symbol browser plugin"
+DESCRIPTION="This plugin will add a new tab to the side pane in the Gedit text
+editor which shows symbols (functions, classes, variables, etc.) for the active
+document. Clicking a symbol in the list wil jump to the line on which that
+symbol is defined."
+HOMEPAGE="https://github.com/Quixotix"
+
+REQUIRES="ctags gedit girepository-Gtk3.0 girepository-Peas1.0"
+
 src_compile() { :; }
 
 src_install() {
